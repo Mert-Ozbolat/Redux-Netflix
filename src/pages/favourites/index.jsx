@@ -1,9 +1,9 @@
 import React from 'react'
 
-const index = () => {
+const Favourites = () => {
     return (
-        <div>index</div>
+        <div>Favourites</div>
     )
 }
 
-export default index
+export default Favourites
