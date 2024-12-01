@@ -4,6 +4,7 @@ import Error from '../../components/error';
 import { Link } from 'react-router-dom';
 import { baseImageUrl } from '../../components/constants';
 import api from '../../api';
+import SaveButton from '../../components/savebtn';
 
 
 
@@ -41,7 +42,7 @@ const Hero = () => {
                         className='py-2 px-4 bg-red-600 rounded transition hover:bg-red-700'
                         to={`/movie/${movie.id}`}>Watch Film</Link>
 
-                    <button className='py-2 px-4 bg-blue-600 rounded transition hover:bg-blue-700'>Save</button>
+                    <SaveButton movie={movie} />
                 </div>
 
             </div>
