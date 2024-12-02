@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../components/loader";
 import Error from "../../components/error";
 import { Link } from "react-router-dom";
-import { baseImgUrl } from "../../constants/index";
 import { GoBookmarkSlashFill } from "react-icons/go";
 import { toggleList } from "../../redux/actions";
+import { baseImageUrl } from "../../components/constants";
 
 const WatchList = () => {
     const dispatch = useDispatch();
@@ -15,7 +15,6 @@ const WatchList = () => {
     };
 
     if (isLoading) return <Loader />;
-
     if (error) return <Error info={error} />;
 
     return (
@@ -33,7 +32,7 @@ const WatchList = () => {
                         </button>
 
                         <Link to={`/movie/${movie.id}`}>
-                            <img src={baseImgUrl + movie.poster_path} className="rounded" />
+                            <img src={baseImageUrl + movie.poster_path} className="rounded" />
                         </Link>
 
                         <h1 className="text-xl text-center font-semibold mt-3">{movie.title}</h1>
