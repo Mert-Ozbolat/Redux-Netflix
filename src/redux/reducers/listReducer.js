@@ -3,7 +3,7 @@ import ActionTypes from "./actionTypes";
 
 const initialState = {
     list: [],
-    isLoading: False,
+    isLoading: false,
     error: null
 }
 
@@ -24,8 +24,8 @@ const listReducer = (state = initialState, { type, payload }) => {
             return { ...state, list: updated };
 
         case ActionTypes.REMOVE_FROM_LIST:
-            const filtered = state.list.filtered((i) => i.id !== payload.id)
-            return { ...state, list: filtered }
+            const filtred = state.list.filter((i) => i.id !== payload.id);
+            return { ...state, list: filtred };
 
         default:
             return state;

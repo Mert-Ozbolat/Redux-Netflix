@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { toogleList } from '../../redux/actions'
 import { GoBookmarkSlashFill } from "react-icons/go";
 import { MdBookmarkAdd } from "react-icons/md";
+import { toggleList } from '../../redux/actions';
 
 
-const SaveButton = () => {
+const SaveButton = ({ movie }) => {
 
     const { list } = useSelector((store) => store)
     const dispatch = useDispatch();
@@ -14,8 +14,8 @@ const SaveButton = () => {
 
 
     const handleClick = () => {
-        dispatch(toogleList(movie, !isAdded))
-    }
+        dispatch(toggleList(movie, !isAdded));
+    };
 
     return (
         <button
@@ -26,12 +26,12 @@ const SaveButton = () => {
                 isAdded ? (
                     <>
                         <GoBookmarkSlashFill className='text-xl' />
-                        "Remove From List"
+                        Remove From List
                     </>
                 ) : (
                     <>
                         <MdBookmarkAdd className='text-xl' />
-                        "Add to List"
+                        Add to List
                     </>
                 )
             }
